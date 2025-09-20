@@ -3,7 +3,6 @@ let body = document.querySelector("body");
 let startgame= false;
 let divs = document.getElementsByClassName("card-inner"); // gives us html collection
 let count = 0;
-let randdiv = Array.from(divs)
 let checkarr = []
 let divarr = ["🍎","🍎","🍌","🍌","🍇","🍇","🍉","🍉","🥝","🥝","🍍","🍍","🍓","🍓","🥥","🥥"]
 let checking = false;
@@ -75,11 +74,7 @@ function shuffle(arr){
     divs[i].querySelector(".card-back").textContent = arr[i];
   } 
   console.log(divs)
-}
-
-function checkingemoji(){
 
 }
-
 shuffle(divarr);
 start();
