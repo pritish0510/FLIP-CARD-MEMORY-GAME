@@ -7,7 +7,7 @@ let win = 0;
 let checkarr = []
 let divarr = ["🍎","🍎","🍌","🍌","🍇","🍇","🍉","🍉","🥝","🥝","🍍","🍍","🍓","🍓","🥥","🥥"]
 let checking = false;
-
+let winsound = new Audio("winningsound.mp3")
 let clickSound = new Audio("clicksound.mp3");
 function start(){
   body.addEventListener("keypress",function(event){
@@ -45,6 +45,10 @@ clickSound.currentTime = 0;
             checkarr = [];
             count = 0;
             checking = false;
+ if(win==8){
+    h2.innerText = "🎉  C O N G R A T S!     Y O U         W O N  🎉"
+    winsound.play();
+  }
           }
           else{
             setTimeout(() => {
@@ -62,11 +66,8 @@ clickSound.currentTime = 0;
 
     })
   }
-  if(win==8){
-    
-  }
+ 
 }
-
 function flipcard(obj){
   obj.classList.add("flipped"); 
 }
