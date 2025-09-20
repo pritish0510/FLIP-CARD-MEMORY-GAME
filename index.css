@@ -39,7 +39,7 @@ h1 {
   transition: transform 0.6s;
 }
 
-.card.flipped .card-inner {
+.card-inner.flipped {
   transform: rotateY(180deg);
 }
 
