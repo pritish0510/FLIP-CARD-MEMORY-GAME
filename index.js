@@ -3,9 +3,12 @@ let body = document.querySelector("body");
 let startgame= false;
 let divs = document.getElementsByClassName("card-inner"); // gives us html collection
 let count = 0;
+let win = 0;
 let checkarr = []
 let divarr = ["🍎","🍎","🍌","🍌","🍇","🍇","🍉","🍉","🥝","🥝","🍍","🍍","🍓","🍓","🥥","🥥"]
 let checking = false;
+
+let clickSound = new Audio("clicksound.mp3");
 function start(){
   body.addEventListener("keypress",function(event){
     if(event.key==="Enter" && startgame===false){
@@ -15,7 +18,6 @@ function start(){
     startgame= true;
   })
 
- 
   for(let i=0;i<divs.length;i++){
     divs[i].addEventListener("click",()=>{
 
@@ -23,6 +25,8 @@ function start(){
         if(checking ===true){
             return ;
         }
+clickSound.currentTime = 0; 
+      clickSound.play();
         console.log("we have clicked the card",divs[i])
 
         if(count<2 && checkarr.includes(divs[i])==false){
@@ -35,9 +39,9 @@ function start(){
             checking = true 
           let firstEmoji = checkarr[0].querySelector(".card-back").textContent;
           let secondEmoji = checkarr[1].querySelector(".card-back").textContent;
-
+            
           if(firstEmoji === secondEmoji){
-          
+          win++;
             checkarr = [];
             count = 0;
             checking = false;
@@ -48,7 +52,7 @@ function start(){
               checkarr = [];
               count = 0;
               checking = false
-            }, 500);
+            }, 1000);
           }
         }
       } 
@@ -57,6 +61,9 @@ function start(){
       }
 
     })
+  }
+  if(win==8){
+    
   }
 }
 
