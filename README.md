@@ -5,7 +5,8 @@ A fun and interactive **Flip Card Memory Game** built with **HTML, CSS, and Java
 The game uses the **Fisher–Yates Shuffle Algorithm** to randomize cards each time the game starts, ensuring fairness and replayability.  
 
 ---
-
+## live demo
+https://flipcardmemory.netlify.app/
 ## 🚀 Features  
 - 🎮 Start the game by pressing **Enter**  
 - 🖱️ Click on cards to flip them  
